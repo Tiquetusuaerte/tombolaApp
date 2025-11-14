@@ -1,13 +1,10 @@
-name: CI - Tombola Ionic App
+name: Build Android AAB - Tombola
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch: {}   # lo lanzas a mano desde la pestaña Actions
 
 jobs:
-  build:
+  build-aab:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +14,62 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'   # para Angular 19 va bien
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build Angular app
-        run: npm run build
+      - name: Install Cordova CLI
+        run: npm install -g cordova
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # 1) Restaurar el keystore desde el secret
+      - name: Restore keystore from secret
+        run: |
+          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > android-signing.keystore
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+
+      # 2) Crear build.ci.json con las credenciales
+      - name: Create build config for signing
+        run: |
+          cat > build.ci.json << EOF
+          {
+            "android": {
+              "release": {
+                "keystore": "android-signing.keystore",
+                "storePassword": "$ANDROID_KEYSTORE_PASSWORD",
+                "alias": "$ANDROID_KEY_ALIAS",
+                "password": "$ANDROID_KEY_ALIAS_PASSWORD",
+                "packageType": "bundle"
+              }
+            }
+          }
+          EOF
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_ALIAS_PASSWORD: ${{ secrets.ANDROID_KEY_ALIAS_PASSWORD }}
+
+      # 3) Build release .aab (igual que tu comando local, pero usando build.ci.json)
+      - name: Build Android bundle (AAB) release
+        run: |
+          cordova platform add android || true
+          cordova build android --release --packageType=bundle --buildConfig=build.ci.json
+
+      # 4) Subir el .aab como artifact
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tombola-android-aab
+          path: |
+            platforms/android/app/build/outputs/bundle/**/*.aab
