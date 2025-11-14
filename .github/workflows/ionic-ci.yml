@@ -17,13 +17,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'   # Angular 19 se lleva mejor con Node 20
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install       # cambiamos de npm ci a npm install
 
-      # Si tu package.json no tiene "build", cambia este comando por el que uses
-      - name: Build Ionic (Angular)
+      - name: Build Angular app
         run: npm run build
-
