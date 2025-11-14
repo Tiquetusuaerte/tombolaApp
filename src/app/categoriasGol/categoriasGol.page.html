@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='contenedor'>
+  <ion-grid>
+   <ion-row>
+    <ion-col size-md="12" size-xs="10" offset-xs="1" size-sm="12" size-lg="12" size-xl="6" offset-md="3">   
+      <div class='cabecera'>
+        <p>Seleccione</p>
+      </div>
+
+        <ion-item (click)='setCategoria(categoria)'  *ngFor="let categoria of categorias">
+          {{ categoria}} 
+        </ion-item>
+     
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+
+<ion-footer>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="tab1" (click)="movimientos()">
+        <ion-label class="label">Movimientos</ion-label>
+      </ion-tab-button>
+  
+      <!-- Placeholder tab for custom center FAB -->
+      <ion-tab-button>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab2" (click)="apostar()">
+        <ion-label class="label">Selecciona</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

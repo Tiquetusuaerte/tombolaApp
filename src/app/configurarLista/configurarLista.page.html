@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #cbd8dc;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="has-header has-tabs">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <p class="title">Configurar Lista</p>
+        <ion-grid>
+          <ion-row class="row" *ngFor="let item of numeros">
+            <ion-col class='num'>
+              <div>
+                {{item.numero}}
+              </div>
+            </ion-col>
+            <ion-col class='por'>
+              <div>
+                x
+              </div>
+            </ion-col>
+            <ion-col>
+              <div>
+               <ion-select
+  [(ngModel)]="item.monto"
+  interface="popover"
+  [name]="'monto_' + item.numero"
+  (ionChange)="agregarNumero(item.numero, $event)">
+  <ion-select-option *ngFor="let item2 of montos" [value]="item2">
+    TQC {{ item2 }}
+  </ion-select-option>
+</ion-select>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-button expand="block" class='btn' (click)="guardar()">Guardar TQC{{sum}}</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

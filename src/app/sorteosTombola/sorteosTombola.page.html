@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"
+        style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #ffffff;">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+            refreshingText="Actualizando sorteos...">
+          </ion-refresher-content>
+        </ion-refresher>
+        <ion-col size-md="12" size-xs="8" offset-xs="2" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+          <div class='cabecera'>
+            <img class='img' src="../../assets/img/Sorteos.png" />
+            <p>Resultados Tombola</p>
+          </div>
+          <ion-card *ngFor = "let item of sorteos">
+            <ion-card-content>
+              <div class='txt'>
+                {{item.fecha}} {{item.hora}}
+              </div>
+              <div class='txt'>
+                {{item.numero1}} x {{item.multiplicador1}}
+              </div>
+              <div *ngIf='item.multiplicador2 != 0' class='txt'>
+                {{item.numero2}} x {{item.multiplicador2}}
+              </div>
+              <div *ngIf='item.multiplicador3  != 0'   class='txt'>
+                {{item.numero3}} x {{item.multiplicador3}}
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+<ion-fab horizontal="center" vertical="bottom" edge>
+  <ion-fab-button (click)="inicio()">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-footer>

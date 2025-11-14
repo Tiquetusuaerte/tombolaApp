@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='contenedor'>
+  <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+    <p class="title">{{sorteo.eliminatoria}}</p>
+    <p class="title">{{sorteo.nombre}}</p>
+   
+    <p> ** La bolsa de este partido se reparte porcentualmente, entre los que acertaron y su valor de apuesta ** </p>
+   
+    <ion-grid>
+      <ion-row class="row">
+        <ion-col class='pais'>
+          <div>
+
+            <ion-text> {{sorteo.equipoA}}</ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-select [(ngModel)]="marcador1"  placeholder="Marcador">
+              <ion-select-option *ngFor="let item2 of marcadores" [value]="item2">{{item2}}</ion-select-option>
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="row">
+        <ion-col class='pais'>
+          <div>
+
+            <ion-text> {{sorteo.equipoB}}</ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-select [(ngModel)]="marcador2"  placeholder="Marcador">
+              <ion-select-option *ngFor="let item2 of marcadores" [value]="item2">{{item2}}</ion-select-option>
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row  class="row ">
+        <ion-col class='apuesta'>
+          <div>
+
+            <ion-text> TQC</ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-select [(ngModel)]="monto"  placeholder="Monto">
+              <ion-select-option *ngFor="let item2 of montos" [value]="item2">{{item2}}</ion-select-option>
+            </ion-select>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <h2 (click)="enviarApuesta()" class='btnApostar'>Agregar a bolsa</h2>
+
+    </ion-grid>
+  </ion-col>
+</ion-content>
+
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

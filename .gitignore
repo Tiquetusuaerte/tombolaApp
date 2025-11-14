@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Builds / compilados
+www/
+platforms/
+plugins/
+resources/
+dist/
+build/
+
+# Credenciales sensibles
+tiqueglobal.jks
+google-services.json
+
+# Archivos del sistema / editor
+.DS_Store
+.idea/
+.vscode/

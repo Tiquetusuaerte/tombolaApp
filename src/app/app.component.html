@@ -1,0 +1,103 @@
+<ion-app>
+  <ion-menu side="end" contentId="content">
+
+    <ion-header>
+      <ion-toolbar color="">
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content style='--background: #0288c5  !important'>
+      <ion-list style="
+    --background: #0288c5;
+    background-color: #0288c5;
+">
+        <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="inicio()" class='items' routerDirection="root">
+            <ion-icon name="home" slot="start" style="color: #ffffff;"></ion-icon>
+            Inicio
+          </ion-item>
+        </ion-menu-toggle>
+                <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="compartirApp()" class='items'> 
+            <ion-icon name="share" slot="start" style="color: #ffffff"></ion-icon>
+            Compartir app
+          </ion-item>
+        </ion-menu-toggle>
+
+       <!--<ion-menu-toggle auto-hide="true">
+          <ion-item (click)="tresMonazos()" class='items'>
+            <ion-icon name="trophy-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Pick3
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item (click)="pale()" class='items'>
+            <ion-icon name="basketball-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Palé
+          </ion-item>
+        </ion-menu-toggle>--> 
+        <ion-menu-toggle auto-hide="true">
+          <ion-item (click)="apostar()" class='items'>
+            <ion-icon name="add-circle-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Lote
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item (click)="perfil()" class='items'>
+            <ion-icon name="person-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Contraseña
+          </ion-item>
+        </ion-menu-toggle> 
+        <ion-menu-toggle auto-hide="true">
+          <ion-item (click)="sorteos()" class='items'>
+            <ion-icon name="wallet" slot="start" style="color: #ffffff"></ion-icon>
+            Resultados
+          </ion-item>
+        </ion-menu-toggle>
+
+        <!---<ion-menu-toggle auto-hide="true">
+          <ion-item (click)="sorteosTombola()" class='items'>
+            <ion-icon name="wallet" slot="start" style="color: #ffffff"></ion-icon>
+            Resultados Tombola
+          </ion-item>
+        </ion-menu-toggle>
+       -->
+        <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="movimientos()" class='items'>
+            <ion-icon name="newspaper-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Movimientos
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="misListas()" class='items'>
+            <ion-icon name="list-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Mis listas
+          </ion-item>
+        </ion-menu-toggle>
+        <!--<ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="agentesAutorizados()" class='items'>
+            <ion-icon name="people-outline" slot="start" style="color: #ffffff"></ion-icon>
+            Agentes autorizados
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="reglamento()" class='items'>
+
+            <ion-icon name="menu" slot="start" style="color: #ffffff"></ion-icon>
+            Reglamento
+          </ion-item>
+        </ion-menu-toggle> -->
+
+        <ion-menu-toggle auto-hide="true">
+          <ion-item tappable (click)="close()" class='items'>
+            <ion-icon name="power" slot="start" style="color: #ffffff"></ion-icon>
+            Cerrar sesión
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content" main>
+  </ion-router-outlet>
+</ion-app>

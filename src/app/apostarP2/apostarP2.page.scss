@@ -1,0 +1,129 @@
+.btn {
+  width: 100%;
+  --background-activated: #4d78bc !important;
+  --background: #f3f5f6 !important;
+  background-color: #ffffff00 !important;
+  color: #8d8d8d !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+ion-item{
+  margin: 3px !important;
+  --background: #d7d7d7 !important;
+  border-radius: 8px !important;
+}ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+.title {
+  color: #1f3156;
+  font-weight: bold;
+}
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}
+.numeros {
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    text-align: center;
+}
+.fila{
+  text-align: center;
+}
+.alignCenter {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.cardMonto{
+  width: 100%;
+  color: #cad8dc;
+}
+.cotenedorBTNS{
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+.btnTab {
+  width: 43%;
+  margin: 1%;
+  color: #cbcdd1;
+  font-weight: bold;
+  padding: 5%;
+  border-radius: 8px !important;
+  background: #4d78bc;
+}
+
+.numSelect{
+    width: 100%;
+    color: #ffffff !important;
+    margin: 0px !important;
+    --background: #2476c4;
+}
+
+.list{
+  font-size: larger;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  border-bottom: 1px solid #88be25;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2px !important;
+  top: 5px;
+}
+
+.icon {
+    font-size: x-large;
+}
+.total{
+  background-color: #226dc3;
+  color: #d7d7d7;
+  text-align: center;
+  padding: 2%;
+  font-size: xx-large;
+  border-radius: 8px;
+  margin: 10%;
+}
+
+.input {
+    font-size: -webkit-xxx-large;
+        color: #c1cfd4;
+}
+.btn{
+  margin: 2%
+}
+
+.contenedor{
+  overflow-y: scroll;
+}
+.contenedorLista {
+
+      border: 0px solid;
+      box-shadow: 2px 3px #88888842;
+      position: relative;
+      color: #c1cfd4;
+  }
+  .abajo {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+  }
+ 
+
+.num {
+    text-align: end;
+}
+
+.por {
+    text-align: center;
+}
+
+.monto {
+    text-align: start;
+}
+ion-toolbar{
+    color: #071720;
+    font-weight: bold;
+}

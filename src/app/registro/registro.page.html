@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="--color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <p class="title">Registro</p>
+
+        <form #form="ngForm" (ngSubmit)="register(form)">
+          <ion-grid>
+            <ion-row class="ion-justify-content-center">
+              <ion-col size-md="6" size-lg="5" size-xs="12">
+                <div class="ion-padding">
+                  <!-- País -->
+                  <ion-note color="medium">Seleccione su país de residencia</ion-note>
+
+                  <ion-item>
+                    <ion-select interface="popover" [(ngModel)]="pais" name="pais"
+                      placeholder="Seleccione su país de residencia" (ionChange)="cambiarPais()" required>
+                      <ion-select-option *ngFor="let item of paises" [value]="item.idPais">
+                        {{ item.nombre }}
+                      </ion-select-option>
+                    </ion-select>
+                  </ion-item>
+
+                  <ion-note color="medium">Identificación</ion-note>
+                  <ion-item>
+                    <ion-input name="identificacion" type="text" placeholder="Digite número de identificación" ngModel
+                      required></ion-input>
+                  </ion-item>
+
+                  <ion-note color="medium">Nombre completo</ion-note>
+                  <!-- Nombre completo -->
+                  <ion-item>
+                    <ion-input name="nombre" type="text" placeholder="Digite su nombre completo" ngModel
+                      required></ion-input>
+                  </ion-item>
+
+                  <ion-note color="medium">Nombre de usuario</ion-note>
+                  <ion-item>
+                    <ion-input name="nickname" ngModel #nickname="ngModel" required pattern="^[^ ]+$"
+                      placeholder="Escoja un nombre para hacer ingreso a la página" type="text">
+                    </ion-input>
+                  </ion-item>
+
+                  <!-- Mensajes de validación -->
+                  <ion-text color="danger" *ngIf="nickname.invalid && nickname.touched">
+                    <p *ngIf="nickname.errors?.pattern">El nombre no debe llevar espacios.</p>
+                  </ion-text>
+
+                  <ion-note color="medium">Email</ion-note>
+
+                  <!-- Correo -->
+                  <ion-item>
+                    <ion-input name="correo" type="email" placeholder="Su email" ngModel required></ion-input>
+                  </ion-item>
+
+                  <ion-note color="medium">Número de teléfono </ion-note>
+                  <!-- Teléfono -->
+                  <ion-item>
+
+                    <ion-input name="telefono" type="tel" placeholder="Su número de teléfono" ngModel
+                      required></ion-input>
+                  </ion-item>
+
+                  <!-- Contraseña -->
+                  <ion-note color="medium">Contraseña para ingresar al sistema</ion-note>
+
+                  <ion-item>
+                    <ion-input name="contrasena" type="password" placeholder="Su contraseña para ingresar al sistema"
+                      ngModel required></ion-input>
+                  </ion-item>
+                </div>
+
+                <!-- Términos -->
+                <ion-text color="medium" class="ion-padding">
+                  <p>
+                    •⁠ Sus datos serán revisados por Tique Internacional para validar su identidad.<br />
+                    •⁠ El número de teléfono registrado debe ser el mismo con el que contacte a la empresa.<br />
+                    •⁠ Para cambiar su número de teléfono, su identidad será verificada.<br />
+                    •⁠ Todos los campos son obligatorios.<br />
+                  </p>
+                </ion-text>
+
+                <!-- Botón -->
+                <div class="ion-padding">
+                  <ion-button expand="block" class="btn" type="submit" [disabled]="form.invalid">
+                    Registrarse
+                  </ion-button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

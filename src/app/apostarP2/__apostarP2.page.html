@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar style='--background: #122C3A;'>
+    <ion-buttons slot="start">
+        <ion-back-button text="" style="
+    background-color: #122c3b;
+    --color: #cbd8dc;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class='contenedor'>
+  <ion-grid>
+   <ion-row>
+     <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12"  size-xl="6"  offset-md="3">
+      <ion-toolbar>
+        <div >
+        Lista de compra
+        </div>
+        <div >
+        {{nombreLoteria}}
+        </div>
+      </ion-toolbar>
+
+      <ion-grid>
+        <ion-row *ngFor = "let item of numeros"  >
+          <ion-col class='num'>
+            <div >
+                {{item.numero}}
+            </div>
+          </ion-col>
+          <ion-col class='por'>
+            <div>
+              x
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <ion-select [(ngModel)]="item.monto"  (ionChange)="agregarNew(item.numero,$event)"  name='monto_{{item}}'>
+                <ion-select-option   *ngFor = "let item2 of montos"   [value]="item2">₡ {{item2}}</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+    <!--  <ion-grid>
+        <ion-row  >
+          <ion-col class='num'>
+            <div >
+              <div>Número</div>
+              <ion-select [(ngModel)]="numero"  name='numero'>
+                <ion-select-option   *ngFor = "let num of numeros"   [value]="num.numero">{{num.numero}}</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-col>
+          <ion-col class='por'>
+            <div >
+              <div>X</div>
+            </div>
+          </ion-col>
+          <ion-col class='monto'>
+            <div>
+              <div>Monto</div>
+              <ion-select [(ngModel)]="monto"  name='monto'>
+                <ion-select-option   *ngFor = "let item2 of montos"   [value]="item2">₡ {{item2}}</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+        <ion-button expand="block" class='btn' (click)="agregarNew()">Agregar</ion-button>-->
+
+        <!--<div class='contenedorLista' *ngIf='apuestas'>
+          <div class='list' *ngFor="let apuesta of apuestas">
+                #{{apuesta[0]}}  x  ₡ {{apuesta[2]}}
+                <ion-icon (click)='eliminarNumero(apuesta[0])'class='icon' color='danger' name="trash"></ion-icon>
+          </div>
+
+
+        </div>-->
+
+
+
+      <!--    <div class='numeros'>
+
+              <ion-grid class='prueba'>
+                <ion-row >
+                  <ion-col size="4" style="height: auto;">
+                    <ion-input class='input' maxlength="2" type="text" placeholder="0" name="display" [(ngModel)]="result">
+                    </ion-input>
+                  </ion-col>
+                  <ion-col size="8" style="height: {{alto}}px">
+                    <div class='contenedorLista'>
+                      <div class='list' *ngFor="let f of apuestas">
+                            #{{ f[0]}}x80    ₡ {{f[2]}}
+                        <ion-icon (click)='eliminarNumero(f[0])'class='icon' color='danger' name="trash"></ion-icon>
+                      </div>
+                    </div>
+                  </ion-col>
+                </ion-row>
+                </ion-grid>
+                  </div>
+          <ion-grid class='abajo'>
+          <h2 class='total'>₡ {{sumatoria}} <ion-icon class='icon' (click)="enviar()" name="checkmark-circle"></ion-icon></h2>
+          <ion-row>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('1')">1</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('2')">2</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('3')">3</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(100)">₡100</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(200)">₡200</ion-button></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('4')">4</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('5')">5</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('6')">6</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(300)">₡300</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(400)">₡400</ion-button></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('7')">7</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('8')">8</ion-button></ion-col>
+            <ion-col size="2" ><ion-button class='btn' shape="round" (click)="add('9')">9</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(500)">₡500</ion-button></ion-col>
+            <ion-col size="3" ><ion-button class='btn' shape="round" (click)="agregarNumero(1000)">₡1000</ion-button></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="9"><ion-button class='btn' shape="round" (click)="add('0')">0</ion-button></ion-col>
+            <ion-col size="3"><ion-button class='btn' shape="round" (click)="agregarNumero(2000)">₡2000</ion-button></ion-col>
+          </ion-row>
+        </ion-grid>-->
+      <h2 (click)="enviar()" class='total'>Comprar ₡ {{sum}}</h2>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='contenedor'>
+  <ion-grid>
+   <ion-row>
+     <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12"  size-xl="6"  offset-md="3">
+
+         <p class='tituloSelect'>{{nombre}}</p>
+         <div class="tituloSelect">TQC</div>
+       <ion-select  class='select' [(ngModel)]="monto" name='monto'>
+         <ion-select-option   *ngFor = "let item2 of montos"   [value]="item2">TQC {{item2}}</ion-select-option>
+       </ion-select>
+        <div class="tituloSelect">Selecciona</div>
+       <ion-select  class='select'  [(ngModel)]="lot"  name='lot'>
+         <ion-select-option   *ngFor = "let item2 of loterias"   [value]="item2.idProgramacion"> 
+          {{ item2.nombreLoteria }} {{ item2.horaFormato }} -
+          x {{ item2.primerNumero }}
+          <ng-container *ngIf="item2.segundoNumero != 0">/{{ item2.segundoNumero }}</ng-container>
+          <ng-container *ngIf="item2.tercerNumero != 0">/{{ item2.tercerNumero }}</ng-container>
+        
+        </ion-select-option>
+       </ion-select>
+       <ion-button expand="block" class='btn' (click)="cargarApuesta()">Lanzar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>

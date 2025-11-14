@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class='contenedor'>
+  <div class='cabecera'>
+    <p>Pick3</p>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <label>Juega</label>
+      <ion-select class='select' [(ngModel)]="sorteo" name='sorteo'>
+        <ion-select-option *ngFor="let item2 of sorteos" [value]="item2">{{item2.nombre}} {{item2.horaFormato}} </ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <label>Formato</label>
+      <ion-select class='select' [(ngModel)]="categoria" name='categoria'>
+        <ion-select-option *ngFor="let item2 of categorias" [value]="item2">{{item2.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-row>
+    <ion-row>
+      <label>TQC</label>
+      <ion-select class='select' [(ngModel)]="monto" name='monto'>
+        <ion-select-option *ngFor="let item2 of montos" [value]="item2">{{item2}}</ion-select-option>
+      </ion-select>
+    </ion-row>
+
+
+    <ion-row class="row" *ngFor="let word2 of cantidad; let in=index" class="col-sm-3">
+      <ion-col>
+        <p>Primero</p>
+        <ion-select class='select' placeholder="-" [(ngModel)]="cantidad[in].primero" name="primero{{in}}"
+          #name="ngModel">
+          <ion-select-option *ngFor="let item2 of numSelect" [value]="item2">{{item2}}</ion-select-option>
+        </ion-select>
+
+      </ion-col>
+      <ion-col>
+        <p>Segundo</p>
+        <ion-select class='select' placeholder="-" [(ngModel)]="cantidad[in].segundo" name="segundo{{in}}"
+          #name="ngModel">
+          <ion-select-option *ngFor="let item2 of numSelect" [value]="item2">{{item2}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+      <ion-col>
+        <p>Tercero</p>
+        <ion-select class='select' placeholder="-" [(ngModel)]="cantidad[in].tercero" name="tercero{{in}}"
+          #name="ngModel">
+          <ion-select-option *ngFor="let item2 of numSelect" [value]="item2">{{item2}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+
+    </ion-row>
+    <ion-row class='options'>
+      <ion-col>
+        <a (click)="agregar()">+ Agregar</a>
+      </ion-col>
+      <ion-col>
+        <a *ngIf="cantidad?.length > 1" (click)="eliminar()">- Eliminar</a>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row">
+      <ion-button expand="block" class='btn' (click)="comprar()">Jugar</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,43 @@
+.titleRow{
+    font-weight: bold;
+}
+
+ion-col {
+  text-align: center;
+}
+
+ion-grid {
+    color: #CAD8DC;
+}
+ion-toolbar  {
+  text-align: center;
+  --background: #CAD8DC;
+}
+
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+
+ion-title{
+  text-align: center;
+  color: #122c3b;
+}
+ion-refresher ion-refresher-content {
+     background: #CAD8DC;
+    --color:#122C3A!important;
+}
+ion-row {
+    border-bottom: 1px solid #cbd8dc;
+}
+
+.tab {
+  color: #787878;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+ion-col{
+  font-size: medium;
+}

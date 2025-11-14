@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"
+        style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #ffffff;">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="8" offset-xs="2"size-sm="12" size-lg="12"  size-xl="6"  offset-md="3">
+   <div class='cabecera'>
+   
+     <p>Reglamento</p>
+     <div [innerHTML]="this.reglamento"></div>
+   </div>
+       
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+<ion-fab horizontal="center" vertical="bottom" edge>
+  <ion-fab-button (click)="inicio()">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-footer>

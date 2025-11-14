@@ -1,0 +1,44 @@
+ion-list{
+    margin: 2%;
+}
+
+.icon{
+  color:  #122c3d8c
+}
+
+p{
+    margin: 2px !important;
+}
+.saldo-azul {
+  color: #407ec0; // azul
+  font-weight: bold;
+}
+
+.saldo-rojo {
+  color: #ea7973; // rojo
+  font-weight: bold;
+}
+.saldo-verde {
+  color: #75d098; // rojo
+  font-weight: bold;
+}
+.saldo-morado {
+  color: #8673a8; // rojo
+  font-weight: bold;
+}
+
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+.item{
+  color: #787878;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  --background: #f7f7f7 !important;
+  border-radius: 10px;  margin-bottom: 4px;
+}
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}

@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class='contenedor'>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <ion-col class="ion-text-center">
+          <button class='btnTab' (click)="next(slides,0)">Números</button>
+          <button class='btnTab' (click)="next(slides,1)">TQC</button>
+        </ion-col>
+        <ion-slides pager="true" #slides>
+          <ion-slide>
+            <ion-card>
+              <div class="title">
+                Lista
+              </div>
+              <div class="title">
+                {{nombreLoteria}}
+              </div>
+
+              <ion-grid>
+                <ion-row>
+                  <ion-col size='3' *ngFor="let item of numeros">
+                    <ion-button #numeroRef [id]="item.idNumero" class="btn {{className}}" shape="round"
+                      (click)="agregarNuevoNumero(item.idNumero)">
+                      {{ item.idNumero }}
+                    </ion-button>
+
+
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+          </ion-slide>
+          <ion-slide>
+            <ion-card class='cardMonto'>
+              <ion-list>
+                <ion-radio-group [(ngModel)]="montoSeleccionado" (ionChange)="aplicarMontoSeleccionado()">
+                 <ion-item *ngFor="let monto of montos">
+                  <ion-label>TQC {{ monto }}</ion-label>
+                  <ion-radio slot="start" [value]="+monto"></ion-radio>
+                </ion-item>
+                </ion-radio-group>
+
+              </ion-list>
+              <h2 (click)="enviar()" class='total'>Lanzar TQC {{this.formatonumero(sum)}}</h2>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

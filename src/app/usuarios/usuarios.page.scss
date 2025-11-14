@@ -1,0 +1,25 @@
+
+.disponible{
+  font-size: xx-large;
+  background-color: #cbd8dc94;
+  padding: 14%;
+  text-align: center;
+  margin-top: 10%;
+  font-weight: bold;
+  color: #cbd8dc;
+}
+
+.btn{
+  margin: 2%
+}
+
+
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+
+ion-refresher ion-refresher-content {
+     background: #CAD8DC;
+    --color:#122C3A!important;
+}

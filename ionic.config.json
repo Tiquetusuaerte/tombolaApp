@@ -1,0 +1,7 @@
+{
+  "name": "tiqueGlobal",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

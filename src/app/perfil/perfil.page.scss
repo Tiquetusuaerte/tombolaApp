@@ -1,0 +1,63 @@
+
+
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}
+
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+ion-toolbar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+}
+.cabecera{text-align: center;}
+
+.inputcont{
+  border-radius: 7px;
+  font-size: x-large;
+  padding: 7% !important;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(175, 175, 175);
+  color: rgb(18, 44, 59);
+}
+ion-refresher ion-refresher-content {
+     background: #CAD8DC;
+    --color:#122C3A!important;
+}
+
+img{
+  width: 20%;
+}
+
+ion-fab {
+  bottom: 28px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+
+  ion-fab-button {
+      --box-shadow: none;
+  }
+}
+ion-fab-button{
+  --background: #122C64;
+  --background-activated: #122C64 !important;
+  --background-activated: #122C64 !important;
+  --background-focused: #122C64 !important;
+  --background-hover: #122C64 !important;
+  --color-activated: #122c3b !important;
+  --color-focused: #122c3b !important;
+}
+
+ion-label{
+  background-color: #7385abab;
+  padding: 10px;
+  color: white;
+  border-radius: 7%;
+  width: 90%;
+}

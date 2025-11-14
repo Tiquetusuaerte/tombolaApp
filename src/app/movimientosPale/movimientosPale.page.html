@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+          <div class='cabecera'>
+            <p>Movimientos Palé</p>
+          </div>
+          <div class="caja"  *ngFor="let item of movimientos; let index = index;let ultimo=last ">
+            <div  *ngIf="item.idRegistroCompra">
+              <div *ngIf="!movimientos[index-1] || item.idRegistroCompra !== movimientos[index-1].idRegistroCompra">
+                <p class="ticket" *ngIf="item.idRegistroCompra">Ticket #{{item.idRegistroCompra}}</p>
+                <p class="nombre" *ngIf="!item.idRegistroCompra">Ticket #{{item.idcomprasPale}}</p>
+                  <p class="nombre">{{item.nombreLoteria}}   {{item.horaFormato}}</p> 
+                  <p class="nombre">{{item.fecha}}</p>
+                  <p class="monto"> TQC {{ item.montoTotal}}</p>
+              </div>
+        
+              <ion-row >
+                <ion-col class="text-right ">
+                  #{{item.numero1 | number: '2.'}} #{{item.numero2 | number: '2.'}}
+                </ion-col>
+                <ion-col>
+                  TQC  {{item.monto}}
+                </ion-col>
+              </ion-row>
+        
+            
+            </div>
+            <div   *ngIf="!item.idRegistroCompra">
+              <div >
+                <p class="ticket">Ticket #{{item.idcomprasTM}}</p>
+                  <p class="nombre">{{item.nombreLoteria}}</p>
+                  <p class="nombre">Modalidad: {{item.nombreCategoria}}</p>
+                  <p class="nombre">{{item.fecha}}</p>
+                  <p class="monto"> TQC {{ item.monto}}</p>
+              </div>
+        
+              <ion-row >
+                <ion-col class="text-right ">
+                  
+                  #{{item.numero1 | number: '2.'}} #{{item.numero2 | number: '2.'}}
+                </ion-col>
+                <ion-col>
+                  TQC  {{item.monto}}
+                </ion-col>
+              </ion-row>
+             
+            </div>
+          </div>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientosN()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

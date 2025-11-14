@@ -1,0 +1,31 @@
+ion-list{
+    margin: 2%;
+}
+
+.icon{
+  color:  #122c3d8c
+}
+
+p{
+    margin: 2px !important;
+}
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}
+.item{
+  color: #787878;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  --background: #f7f7f7 !important;
+  border-radius: 10px;  margin-bottom: 4px;
+}
+.nombre{
+  text-align: center;
+  font-weight: bold;
+  color: #2871c4;
+}

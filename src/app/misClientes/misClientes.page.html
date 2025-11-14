@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar style='--background: #122C3A;'>
+    <ion-buttons slot="start">
+        <ion-back-button text="" style="
+    background-color: #122c3b;
+    --color: #cbd8dc;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="has-header has-tabs">
+  <ion-grid>
+   <ion-row>
+     <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12"  size-xl="6"  offset-md="3">
+      <ion-toolbar>
+        <ion-title>Mis clientes</ion-title>
+      </ion-toolbar>
+      <ion-list *ngIf="clientes">
+        <ion-item *ngFor = "let item of clientes">
+          {{item.nombre}}
+           <ion-icon slot="end" (click)='editarCliente(item.idClienteVentas)' name="create"></ion-icon>
+           <ion-icon slot="end" (click)="eliminarCliente(item.idClienteVentas)" name="trash"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar style="--background: #122c3b !important;">
+        <div class="tabs tabs-icon-top divFooter">
+            <a class="tab-item" (click)="inicio()">
+                <div class="divIconFooter">
+                    <ion-icon name="home"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                    Inicio
+                </div>
+            </a>
+            <a class="tab-item" (click)="movimientos()">
+                <div class="divIconFooter">
+                    <ion-icon name="paper"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                    Movimientos
+                </div>
+            </a>
+            <a class="tab-item" (click)="apostar()">
+                <div class="divIconFooter">
+                    <ion-icon name="cart"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                  Selecciona
+                </div>
+            </a>
+        </div>
+    </ion-toolbar>
+</ion-footer>

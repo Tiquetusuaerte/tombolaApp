@@ -1,0 +1,18 @@
+{
+    "android": {
+        "debug": {
+            "keystore": "tiqueglobal.jks",
+            "storePassword": "TiqueG.2022",
+            "alias": "tiqueglobal",
+            "password" : "TiqueG.2022",
+            "keystoreType": ""
+        },
+        "release": {
+            "keystore": "tiqueglobal.jks",
+            "storePassword": "TiqueG.2022",
+            "alias": "tiqueglobal",
+            "password" : "TiqueG.2022",
+            "keystoreType": ""
+        }
+    }
+}

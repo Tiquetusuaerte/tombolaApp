@@ -1,0 +1,119 @@
+.btn {
+    margin-top: 10%;
+}
+.numeros {
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    text-align: center;
+}
+.fila{
+  text-align: center;
+}
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}
+.alignCenter {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.cardMonto{
+  width: 100%;
+  color: #cad8dc;
+}
+.btnTab {
+  width: 100%;
+  margin: 1%;
+  color: #122c3b;
+  font-weight: bold;
+  padding: 5%;
+  background: linear-gradient(to bottom, #122c3a,#88bd24);
+}
+
+.tituloSelect {
+    margin-top: 2%;
+    font-weight: bold;
+    color: #122c3b;
+}
+.numSelect{
+  width: 50%;
+  padding: 5%;
+  margin: 1%;
+  background-color: #505050;
+  border-radius: 50%;
+}
+
+.num{
+  width: 50%;
+  padding: 5%;
+  margin: 1%;
+  color: #122c3b;
+  background-color: #cad8dc;
+  border-radius: 50%;
+}
+.list{
+  font-size: larger;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  border-bottom: 1px solid #88be25;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2px !important;
+  top: 5px;
+}
+
+.icon {
+    font-size: x-large;
+}
+.total{
+    background-color: #c1cfd4;
+    color: #de0000;
+    text-align: center;
+    padding: 2%;
+    font-size: xx-large;
+        margin-top: 10%;
+}
+.input {
+    font-size: -webkit-xxx-large;
+        color: #c1cfd4;
+}
+
+
+.contenedor{
+  overflow-y: scroll;
+}
+.contenedorLista {
+
+      border: 0px solid;
+      box-shadow: 2px 3px #88888842;
+      position: relative;
+      color: #c1cfd4;
+  }
+  .abajo {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+  }
+
+.num {
+    text-align: end;
+}
+
+.por {
+    text-align: center;
+}
+
+.select {
+  background-color: #c9c9c9;
+  border-radius: 8px;
+  color: #878787;
+}
+.monto {
+    text-align: start;
+}
+ion-toolbar{
+    color: #071720;
+    font-weight: bold;
+}

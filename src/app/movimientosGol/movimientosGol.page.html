@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-back-button text="" style="
+      --color: #ffffff;"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+
+        <ion-col size-md="12" size-xs="8" offset-xs="2" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+          <div class='cabecera'>
+            <p>Movimientos Gol</p>
+          </div>
+          <ion-list>
+            <ion-item *ngFor="let item of movimientos" class="item texto ion-text-wrap">
+
+              <ion-text color="#f5f5f5">
+                <p class="nombre">Ticket #{{item.idapuestasGOL}}</p>
+                <p class="nombre">{{item.nombre}}</p>
+                <ion-row>
+                  <ion-col>
+                    {{item.equipoA}}
+                  </ion-col>
+                  <ion-col>
+                    {{item.marcador1}}
+                  </ion-col>
+
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    {{item.equipoB}}
+                  </ion-col>
+                  <ion-col>
+                    {{item.marcador2}}
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    TQC
+                  </ion-col>
+                  <ion-col>
+                    {{item.monto}}
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col>
+                    Comprado
+                  </ion-col>
+                  <ion-col>
+                    {{item.fecha}}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  
+                  <ion-col>
+                    {{item.detalle}}
+                  </ion-col>
+                </ion-row>
+               
+              </ion-text>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientosN()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>

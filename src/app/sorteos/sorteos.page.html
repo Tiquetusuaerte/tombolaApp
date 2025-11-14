@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"
+        style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #ffffff;">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+          <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+            refreshingText="Actualizando sorteos...">
+          </ion-refresher-content>
+        </ion-refresher>
+        <ion-col size-md="12" size-xs="8" offset-xs="2" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+          <div class='cabecera'>
+            <img class='img' src="../../assets/img/Sorteos.png" />
+            <p>Resultados</p>
+          </div>
+            <ion-card *ngFor = "let item of sorteos">
+              <ion-card-content>
+                <div class='txt'>
+                  {{item.fecha_formateada}} 
+                </div>
+               <div class="txt">
+                  {{ item.Nombre }} {{ item.horaFormato }}
+                  <ng-container *ngIf="item.multiplicador1 !== 0 || item.multiplicador2 !== 0 || item.multiplicador3 !== 0">
+                    -
+                    <span *ngIf="item.multiplicador1 !== 0">x {{ item.multiplicador1 }}</span>
+                    <span *ngIf="item.multiplicador2 !== 0">/{{ item.multiplicador2 }}</span>
+                    <span *ngIf="item.multiplicador3 !== 0">/{{ item.multiplicador3 }}</span>
+                  </ng-container>
+                </div>
+                <div class='txt'>
+                  Primer {{item.numGanador1}}  <p *ngIf="item.numGanador2"> Segundo {{item.numGanador2}}</p> <p *ngIf="item.numGanador3">Tercer {{item.numGanador3}}</p> 
+                </div>
+               
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+  
+  
+         <!---<ion-grid>
+            <ion-row class='tab' >
+              <ion-col class="titleRow">
+                <div>
+                  Número
+                </div>
+              </ion-col>
+              <ion-col class="titleRow">
+                <div>
+                  Loteria
+                </div>
+              </ion-col>
+              <ion-col class="titleRow">
+                <div>
+                  Fecha
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row scrollX="true" class='tab' *ngFor="let item of sorteos">
+              <ion-col>
+                <div>
+                  {{item.numero}}
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                  {{item.nombreLoteria}}
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                  {{item.fecha}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>-->
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+<ion-fab horizontal="center" vertical="bottom" edge>
+  <ion-fab-button (click)="inicio()">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-footer>

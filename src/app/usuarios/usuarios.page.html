@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar style='--background: #122C3A;'>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false" style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #CAD8DC;"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="has-header has-tabs">
+  <ion-grid>
+   <ion-row>
+     <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12"  size-xl="6"  offset-md="3">
+  <ion-toolbar>
+    <ion-title>Mis clientes</ion-title>
+  </ion-toolbar>
+  <ion-list>
+    <ion-item  (click)="registrarCliente()">
+      Registrar cliente
+    </ion-item>
+    <ion-item (click)="misClientes()">
+      Mis clientes
+    </ion-item>
+  </ion-list>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
+<ion-footer>
+
+
+    <ion-toolbar style="--background: #122c3b !important;">
+
+        <div class="tabs tabs-icon-top divFooter">
+            <ion-row>
+            <a class="tab-item" style="width: 33%;" (click)="inicio()">
+                <div class="divIconFooter">
+                    <ion-icon name="home"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                    Inicio
+                </div>
+            </a>
+            <a class="tab-item" style="width: 33%;" (click)="movimientos()">
+                <div class="divIconFooter">
+                    <ion-icon name="paper"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                    Movimientos
+                </div>
+            </a>
+            <a class="tab-item" style="width: 33%;" (click)="apostar()">
+                <div class="divIconFooter">
+                    <ion-icon name="cart"></ion-icon>
+                </div>
+                <div class="txtFooter">
+                  Selecciona
+                </div>
+            </a>
+
+          </ion-row>
+        </div>
+    </ion-toolbar>
+
+</ion-footer>

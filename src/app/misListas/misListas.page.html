@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"
+        style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #ffffff;">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="has-header has-tabs">
+  <ion-grid>
+   <ion-row>
+    <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+      
+      <ion-col size-md="12" size-xs="8" offset-xs="2" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+        <div class='cabecera'>
+          <img class='img' src="../../assets/img/Listas.png" />
+          <p>Mis listas</p>
+        </div>
+
+        <ion-button expand="block" class='btn' (click)="agregarLista()">Agregar Lista</ion-button>
+      <ion-list>
+        <ion-item >
+          Terminación 0
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(0,"Terminación 0",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 1
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(1,"Terminación 1",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 2
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(2,"Terminación 2",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 3
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(3,"Terminación 3",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 4
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(4,"Terminación 4",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 5
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(5,"Terminación 5",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 6
+           <ion-icon slot="end" class='icon' (click)='comprarDefinidas(6,"Terminación 6",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 7
+           <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(7,"Terminación 7",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 8
+           <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(8,"Terminación 8",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Terminación 9
+           <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(9,"Terminación 9",1)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 0
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(0,"Decena 0",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 1
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(1,"Decena 1",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 2
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(2,"Decena 2",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 3
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(3,"Decena 3",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 4
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(4,"Decena 4",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 5
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(5,"Decena 5",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 6
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(6,"Decena 6",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 7
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(7,"Decena 7",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 8
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(8,"Decena 8",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Decena 9
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(9,"Decena 9",2)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Cuarto 1
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(1,"Cuarto 1",3)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Cuarto 2
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(2,"Cuarto 2",3)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Cuarto 3
+          <ion-icon slot="end"  class='icon'(click)='comprarDefinidas(3,"Cuarto 3",3)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Cuarto 4
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(4,"Cuarto 4",3)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Mitad 1
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(1,"Mitad 1",4)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Mitad 2
+          <ion-icon slot="end" class='icon' (click)='comprarDefinidas(2,"Mitad 2",4)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item >
+          Pares
+          <ion-icon slot="end"  class='icon' (click)='comprarDefinidas(1,"Pares",5)' name="add"></ion-icon>
+        </ion-item>
+        <ion-item  *ngFor = "let item of listas">
+          {{item.nombre}}
+           <ion-icon slot="end"  class='icon' (click)='configurarLista(item.idLista)' name="settings"></ion-icon>
+           <ion-icon slot="end"  class='icon' (click)='comprar(item.idLista)' name="add"></ion-icon>
+           <ion-icon slot="end"  class='icon' (click)="eliminarLista(item.idLista)" name="trash"></ion-icon>
+        </ion-item>
+      </ion-list>
+      </ion-col>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+<ion-fab horizontal="center" vertical="bottom" edge>
+  <ion-fab-button (click)="inicio()">
+    <ion-icon name="home"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-footer>

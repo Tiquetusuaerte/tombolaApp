@@ -1,0 +1,115 @@
+body {
+    background-color: #ffffff;
+}
+
+ion-toolbar  {
+  text-align: center;
+  --background: #1479c4;
+}
+
+ion-tab-bar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+  display: flex !important;
+}
+ion-content{
+  --background: #ffffff;
+}
+
+ion-title{
+  text-align: center;
+  color: #122c3b;
+}
+.btn {
+    background-color: #122c3b !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    --background: #122c3b !important;
+    --background-activated: #122c3b !important;
+    --background-activated: #122c3b !important;
+
+    --background: #122c3b !important;
+    --background-focused: #122c3b !important;
+    --background-hover: #122c3b !important;
+
+    --color: #ffffff !important;
+    --color-activated: #122c3b !important;
+    --color-focused: #122c3b !important;
+
+}
+
+.divIconFooter{
+  font-size: x-large;
+  color: #cbd8dc;
+}
+.txtFooter{
+  font-size: medium;
+  color: #cbd8dc;
+}
+
+.items{
+    --background: #0288c5;
+    color: white;
+}
+
+.itemsTG{
+  --background: #0288c5;
+  color: white;
+  font-weight: bold;
+}
+
+.logo{
+  width: 80px;
+  margin-left: 15px;
+}
+
+
+ion-toolbar{
+  --background: linear-gradient(#3260c3, #008ac5) !important;
+}
+
+ion-refresher ion-refresher-content {
+     background: #CAD8DC;
+    --color:#122C3A!important;
+}
+
+
+ion-fab {
+  bottom: 28px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+
+  ion-fab-button {
+      --box-shadow: none;
+  }
+}
+
+.cabecera{
+  color: #122c3d;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+img{
+  width: 20%;
+}
+
+
+ion-fab-button{
+  --background: #122C64;
+  --background-activated: #122C64 !important;
+  --background-activated: #122C64 !important;
+  --background-focused: #122C64 !important;
+  --background-hover: #122C64 !important;
+  --color-activated: #122c3b !important;
+  --color-focused: #122c3b !important;
+}
+.label{
+  background-color: #7385abab;
+  padding: 10px;
+  color: white;
+  border-radius: 7%;
+  width: 90%;
+}

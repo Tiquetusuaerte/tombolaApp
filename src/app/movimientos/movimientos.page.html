@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <img class="logo" src="../../assets/img/logoApp.png" />
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"
+        style="background-color: transparent;font-size: xx-large;padding: 0px !important;color: #ffffff;">
+      </ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="12" size-xs="12" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+
+        <ion-col size-md="12" size-xs="8" offset-xs="2" size-sm="12" size-lg="12" size-xl="6" offset-md="3">
+          <div class='cabecera'>
+            <img class='img' src="../../assets/img/Movimientos.png" />
+     
+          <p *ngIf="ultimoMovimiento" class="saldo-verde">SALDO ( TQC {{ formatearNumero(ultimoMovimiento.balance) }} )</p>
+          <p>Movimientos</p>
+
+          </div>
+          <ion-list>
+            <ion-item *ngFor="let item of movimientos" class="item texto ion-text-wrap">
+              <ion-icon slot="end" *ngIf='item.idTipoMovimiento == 6' (click)="detalleMovimiento(item.idVenta)"
+                class='icon' name="search"></ion-icon>
+              <ion-icon slot="end" *ngIf='item.idTipoMovimiento == 6' (click)="apostar2(item.idVenta)" class='icon'
+                name="cash"></ion-icon>
+
+
+              <ion-text color="#f5f5f5">
+                {{item.fecha_formateada}} / {{item.detalle}} /
+
+                <strong [ngClass]="
+                  item.idTipoMovimiento === 5 || item.idTipoMovimiento === 7 ? 'saldo-azul' :
+                  item.idTipoMovimiento === 4 || item.idTipoMovimiento === 10 ? 'saldo-rojo' :
+                  item.idTipoMovimiento === 6 || item.idTipoMovimiento === 14 || item.idTipoMovimiento === 17 ? 'saldo-verde' :
+                  item.idTipoMovimiento === 3 || item.idTipoMovimiento === 15 || item.idTipoMovimiento === 16 ? 'saldo-morado' :
+                  ''">
+                  Saldo: TQC {{ formatearNumero(item.balance) }}
+                </strong>
+
+              </ion-text>
+
+            </ion-item>
+          </ion-list>
+        </ion-col>
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="movimientos()">
+      <ion-label class="label">Movimientos</ion-label>
+    </ion-tab-button>
+
+    <!-- Placeholder tab for custom center FAB -->
+    <ion-tab-button>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="apostar()">
+      <ion-label class="label">Selecciona</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  <ion-fab horizontal="center" vertical="bottom" edge>
+    <ion-fab-button (click)="inicio()">
+      <ion-icon name="home"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-footer>
